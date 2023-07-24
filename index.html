@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<script>
+   function getComputerChoice () {
+    compChoice = ["rock", "paper", "scissors"]
+    let index = Math.floor(Math.random() * compChoice.length);
+    console.log(compChoice[index])
+    return(compChoice[index]);
+   }
+
+   const computerSelection = getComputerChoice();
+   playerSelection = prompt("rock, paper, or scissors?").toLowerCase()
+
+   function playRound (playerSelection, computerSelection) {
+    if (playerSelection === "rock" && computerSelection === "rock") {
+        alert ("tie");
+    } else if (playerSelection === "rock" && computerSelection === "paper") {
+        alert ("computer wins");
+    } else if (playerSelection === "rock" && computerSelection === "scissors") {
+        alert ("player wins");
+    } else if (playerSelection === "paper" && computerSelection === "paper") {
+        alert ("tie");
+    } else if (playerSelection === "paper" && computerSelection === "rock") {
+        alert ("player wins");
+    } else if (playerSelection === "paper" && computerSelection === "scissors") {
+        alert ("computer wins");
+    } else if (playerSelection === "scissors" && computerSelection === "rock") {
+        alert ("computer wins");
+    } else if (playerSelection === "scissors" && computerSelection === "paper") {
+        alert ("player wins");
+    } else if (playerSelection === "scissors" && computerSelection === "scissors") {
+        alert ("tie");
+    } else {
+        alert("please enter either 'rock', 'paper', or 'scissors'");
+        playerSelection = prompt("rock, paper, or scissors?").toLowerCase()
+        playRound(playerSelection, computerSelection);
+    }
+   }
+
+   playRound(playerSelection, computerSelection);
+</script>
+
+<body>
+    
+</body>
+</html>
